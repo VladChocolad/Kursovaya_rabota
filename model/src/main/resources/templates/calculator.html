@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор</title>
+</head>
+<body>
+<h1>Арифметический калькулятор</h1>
+<form action="#" th:action="@{/calculate}" th:object="${operation}" method="post">
+  <label for="operand1">Операнд 1:</label>
+  <input type="number" id="operand1" name="operand1" th:field="*{operand1}" required><br>
+
+  <label for="operator">Оператор:</label>
+  <select id="operator" name="operator" th:field="*{operator}">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select><br>
+
+  <label for="operand2">Операнд 2:</label>
+  <input type="number" id="operand2" name="operand2" th:field="*{operand2}" required><br>
+
+  <button type="submit">Вычислить</button>
+</form>
+</body>
+</html>
